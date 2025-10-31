@@ -1,141 +1,140 @@
-body {
-  font-family: "Plus Jakarta Sans" , sans-serif !important;
+/* Reset default margins/padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding-top: 5rem; /* navbar ki height ke barabar */
 }
 
-.container{
-    flex: 1;
+.container {
+  flex: 1;
 }
 
+/* Navbar */
 .navbar {
-    height: 5rem;
-    background-color: white;
-    
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: white;
+  z-index: 1000;
+  margin-top: 0 !important;
 }
 
-.fa-compass{
-    color: #fe424d;
-    font-size: 2rem;
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
 }
 
 .nav-link {
-    color: #222222 !important; 
+  color: #222222 !important;
 }
 
-/* footer */
-.f-info-links a{
-text-decoration: none;
-color: #222222;
+/* Footer */
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
 }
 
-.f-info-links a:hover{
-    text-decoration: underline;
+.f-info-links a:hover {
+  text-decoration: underline;
 }
 
 .f-info {
-    text-align: center;
-    display: flex;
-    height: 8rem;
-    background-color: #ebebeb;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: space-evenly;
+  text-align: center;
+  display: flex;
+  height: 8rem;
+  background-color: #ebebeb;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
 }
 
-.f-info-socials ,
+.f-info-socials,
 .f-info-links,
 .f-info-brand {
-    width: 100%;
-   vertical-align: middle;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .f-info-socials i {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
-
-
-.listing-card{
-    border: none !important;
-    margin-bottom: 2rem;
+/* Cards */
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
 }
 
 .card-img-top {
-    border-radius: 1rem !important;
-    width: 100% !important;
-    object-fit: cover !important;
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
 }
 
 .card-body {
-    padding: 0 ;
+  padding: 0;
 }
 
 .card-text p {
-    font-weight: 400 !important;
+  font-weight: 400 !important;
 }
 
-.listing-link{
-    text-decoration: none !important;
+.listing-link {
+  text-decoration: none !important;
 }
 
 /* Card effect */
-
-.card-img-overlay{
-    opacity: 0;
+.card-img-overlay {
+  opacity: 0;
 }
 
 .card-img-overlay:hover {
-    opacity: 0.2;
-    background-color: white;
+  opacity: 0.2;
+  background-color: white;
 }
 
-.add-btn{
-    background-color: #fe424d !important;
-    border: none !important;
+/* Buttons */
+.add-btn,
+.edit-btn {
+  background-color: #fe424d !important;
+  border: none !important;
 }
 
-/* edit page */
-
-.edit-btn{
-       background-color: #fe424d !important;
-    border: none !important;
+/* Show page */
+.show-img {
+  height: 30vh;
 }
 
-/* 
-show page */
-
-.show-img{
-    height: 30vh;
-    
+.btns {
+  display: flex;
 }
 
-.btns{
-    display: flex;
+.show-card {
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.show-card{
-    padding-left: 0;
-    padding-right: 0;
+/* Map */
+#map {
+  height: 400px;
+  width: 80vh;
 }
 
-
-/*Map */
-
- #map 
-{
-    height: 400px;
-    width: 80vh;
-}
-
-
-
-
-
+/* Reviews */
 .review-section {
   margin-top: 2rem;
   padding: 1rem;
@@ -154,6 +153,7 @@ show page */
   min-width: 300px;
   max-width: 48%;
   box-sizing: border-box;
+  margin-bottom: 1rem;
 }
 
 .review-section .card-body {
@@ -165,20 +165,13 @@ show page */
   width: 100%;
 }
 
-
+/* Responsive */
 @media (max-width: 768px) {
   .review-section .card {
     flex: 1 1 100%;
     max-width: 100%;
   }
-}
-.review-section .card {
-  margin-bottom: 1rem;
-}
 
-
-
-@media (max-width: 768px) {
   .navbar {
     flex-wrap: wrap;
     height: auto;
@@ -203,7 +196,3 @@ show page */
     border-radius: 0.5rem;
   }
 }
-
-
-
-

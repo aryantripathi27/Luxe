@@ -131,3 +131,79 @@ show page */
     height: 400px;
     width: 80vh;
 }
+
+
+
+
+
+.review-section {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.review-section .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+.review-section .review-card,
+.review-section .card {
+  flex: 1 1 45%;
+  min-width: 300px;
+  max-width: 48%;
+  box-sizing: border-box;
+}
+
+.review-section .card-body {
+  word-wrap: break-word;
+}
+
+.review-section textarea {
+  resize: none;
+  width: 100%;
+}
+
+
+@media (max-width: 768px) {
+  .review-section .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+.review-section .card {
+  margin-bottom: 1rem;
+}
+
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .nav-link {
+    padding: 0.5rem 0;
+    width: 100%;
+  }
+
+  .navbar-collapse {
+    background-color: white;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+}
+
+
+
+

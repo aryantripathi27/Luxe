@@ -108,7 +108,7 @@ app.use((req, res, next) => {
 //  ERROR HANDLER 
 app.use((err, req, res, next) => {
   console.log(" ERROR DETAILS BELOW ");
-  console.log(err); // <-- ye line exact error dikha degi
+  console.log(err); 
   let { statusCode = 500, message = "Something went wrong" } = err;
   res.status(statusCode).render("error.ejs", { err });
 });

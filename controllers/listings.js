@@ -117,7 +117,7 @@ module.exports.updateListing = async (req, res, next) => {
     req.flash("success", "Listing updated!");
     res.redirect(`/listings/${id}`);
   } catch (err) {
-    console.log("🔥 UPDATE LISTING ERROR:", err.message);
+    console.log(" UPDATE LISTING ERROR:", err.message);
     next(err);
   }
 };

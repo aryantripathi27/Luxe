@@ -34,7 +34,7 @@ const listingSchema = new Schema({
     type: String,
     required: true,
     trim: true,
-    lowercase: true, // ✅ ensures consistency
+    lowercase: true, //  ensures consistency
     enum: [
       "trending",
       "rooms",
@@ -67,19 +67,19 @@ const listingSchema = new Schema({
     type: {
       type: String,
       enum: ["Point"],
-      default: "Point", // ✅ optional for now
+      default: "Point", //  optional for now
     },
     coordinates: {
       type: [Number],
-      default: [0, 0], // ✅ optional placeholder
+      default: [0, 0], //  optional placeholder
     },
   },
 });
 
-// ✅ index for category filter/search
+//  index for category filter/search
 listingSchema.index({ category: 1 });
 
-// ✅ delete reviews when listing deleted
+// delete reviews when listing deleted
 listingSchema.post("findOneAndDelete", async (listing) => {
   if (listing) {
     await Review.deleteMany({ _id: { $in: listing.reviews } });

@@ -25,10 +25,10 @@ const dbUrl = process.env.ATLASDB_URL;
 // Database connection
 main()
   .then(() => {
-    console.log("✅ Connected to DB");
+    console.log(" Connected to DB");
   })
   .catch((err) => {
-    console.log("❌ MongoDB Connection Error:", err);
+    console.log(" MongoDB Connection Error:", err);
   });
 
 async function main() {
@@ -55,7 +55,7 @@ const store = MongoStore.create({
 });
 
 store.on("error", (err) => {
-  console.log("❌ ERROR IN MONGO SESSION STORE:", err);
+  console.log(" ERROR IN MONGO SESSION STORE:", err);
 });
 
 // Session setup
@@ -105,9 +105,9 @@ app.use((req, res, next) => {
   next(new ExpressError(404, "Page not found"));
 });
 
-// 💥 ERROR HANDLER (main fix yahi hai)
+//  ERROR HANDLER 
 app.use((err, req, res, next) => {
-  console.log("🔥 ERROR DETAILS BELOW 🔥");
+  console.log(" ERROR DETAILS BELOW ");
   console.log(err); // <-- ye line exact error dikha degi
   let { statusCode = 500, message = "Something went wrong" } = err;
   res.status(statusCode).render("error.ejs", { err });
@@ -116,5 +116,5 @@ app.use((err, req, res, next) => {
 // Server start
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
-  console.log(`🚀 Server is listening on port ${port}`);
+  console.log(`Server is listening on port ${port}`);
 });

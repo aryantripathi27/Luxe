@@ -9,7 +9,7 @@ const multer = require("multer");
 const { storage } = require("../cloudConfig.js");
 const upload = multer({ storage });
 
-// ✅ Allowed categories (exactly as per enum in Listing model)
+//  Allowed categories (exactly as per enum in Listing model)
 const allowedCategories = [
   "trending",
   "rooms",
@@ -25,7 +25,7 @@ const allowedCategories = [
 ];
 
 // ---------------------
-// ✅ All Listings + Create
+//  All Listings + Create
 // ---------------------
 router
   .route("/")
@@ -38,14 +38,14 @@ router
   );
 
 // ---------------------
-// ✅ New Listing Form
+// New Listing Form
 // ---------------------
 router.get("/new", isLoggedIn, (req, res) => {
   res.render("listings/new.ejs", { categories: allowedCategories });
 });
 
 // ---------------------
-// ✅ Search Route
+//  Search Route
 // ---------------------
 router.get(
   "/search",
@@ -72,7 +72,7 @@ router.get(
 );
 
 // ---------------------
-// ✅ Category Filter Route
+//  Category Filter Route
 // ---------------------
 router.get(
   "/category/:category",
@@ -97,7 +97,7 @@ router.get(
 );
 
 // ---------------------
-// ✅ Single Listing Show / Edit / Update / Delete
+//  Single Listing Show / Edit / Update / Delete
 // ---------------------
 router
   .route("/:id")
@@ -112,7 +112,7 @@ router
   .delete(isLoggedIn, isOwner, wrapAsync(listingController.destroyListing));
 
 // ---------------------
-// ✅ Edit Listing Form
+//  Edit Listing Form
 // ---------------------
 router.get(
   "/:id/edit",

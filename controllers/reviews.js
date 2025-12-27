@@ -9,7 +9,7 @@ module.exports.createReview = async (req, res) => {
   listing.reviews.push(newReview);
 
   await newReview.save();
-  await listing.save({ validateBeforeSave: false }); // 👈 FIX: skip validation for category
+  await listing.save({ validateBeforeSave: false }); 
 
   req.flash("success", "New Review Created!");
   res.redirect(`/listings/${listing._id}`);
